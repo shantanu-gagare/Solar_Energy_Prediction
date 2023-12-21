@@ -1,0 +1,21 @@
+1. Notebooks folder - Here we store all the files of jupyter noteboks and EDA, model training, and plotting.
+
+2. src folder - Here we'll write all the required code for our complete model training 
+
+3. Artifacts folder - here we'll store all the intermediate files, like pre-processed data, and etc.
+
+
+
+Automating the model training process - Generally we train our model in jupyter notebook but if we want to upload our model on web as a web application we need to write a modular code and for that we need to automate the whole process. 
+
+Pipeline: For automating the process we'll make two pipelines   1. training & 2.prediction pipeline 
+
+    1. Training Pipeline: contains multiple conponents of the model training 
+     Parts of training pipeline 
+
+     Data ingestion -> Data Transformation -> model trainer -> model evaluator 
+     in the final step we'll select the best performing model and make its pkl file 
+
+
+    2. Prediction pipeline: This will be connected with the front end and interact with front end via api 
+    
