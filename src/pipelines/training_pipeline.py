@@ -6,7 +6,7 @@ from src.exception import CustomException
 import pandas as pd
 sys.path.insert(0, os.path.abspath('E:/ML_Projects/Solar_energy_prediction_end_to_end/src'))
 
-from components.data_ingest import DataIngestion
+from components.data_ingestion import DataIngestion
 
 if __name__=="__main__":
     obj = DataIngestion()
