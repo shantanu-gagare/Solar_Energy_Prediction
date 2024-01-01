@@ -1,10 +1,12 @@
 import os
+print(os.getcwd())
 import sys
 from src.logger import logging
 from src.exception import CustomException
 import pandas as pd
+sys.path.insert(0, os.path.abspath('E:/ML_Projects/Solar_energy_prediction_end_to_end/src'))
 
-from src.components.data_ingestion import DataIngestion
+from components.data_ingest import DataIngestion
 
 if __name__=="__main__":
     obj = DataIngestion()
