@@ -1,17 +1,20 @@
-import logging
-import os 
-from datetime import datetime
+import os
+import sys
+import pickle
+import numpy as np
+import pandas as pd 
 
+from src.exception import CustomException
+from src.logger import logging
 
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-logs_path = os.path.join(os.getcwd(), 'logs', LOG_FILE)
-os.makedirs(logs_path, exist_ok=True)
+def save_object(file_path, obj):
+    try:
+        logging.info("Error occured in try block")
+        dir_path = os.path.dirname(file_path)
+        os.makedirs(dir_path, exist_ok=True)
+        with open(file_path, 'wb') as file_obj:
+            pickle.dump(obj, file_obj)
 
-LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
-
-
-logging.basicConfig(
-    filename=LOG_FILE_PATH, 
-    format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO
-)
+    except Exception as e:
+        raise CustomException(e,sys)
+    
